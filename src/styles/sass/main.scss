@@ -116,8 +116,9 @@ p.self-description {
 .ability-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
+  grid-template-rows: auto 1fr;
+  gap: 20px 10px;
+  grid-auto-rows: min-content;
 
   p {
     margin: 10px;
@@ -137,7 +138,7 @@ p.self-description {
 }
 
 .timelime-section-container {
-  max-width: 850px;
+  max-width: 700px;
   margin: 50px auto;
 }
 
@@ -309,5 +310,15 @@ p.self-description {
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .main-content-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
   }
 }
