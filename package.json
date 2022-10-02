@@ -6,9 +6,9 @@
   "author": "deliriusz <deliriusz.eth@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "sass": "node-sass styles/sass/main.scss styles/css/style.css -w"
+    "sass": "sass src/styles/sass/main.scss src/styles/css/style.css -w"
   },
   "devDependencies": {
-    "node-sass": "^7.0.3"
+    "sass": "^1.55.0"
   }
 }
