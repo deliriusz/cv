@@ -260,6 +260,16 @@ p.self-description {
   .left-panel {
     width: 100%;
   }
+  .right-panel {
+    margin: 0 1em;
+  }
+  .ability-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+  }
+  .ability-container p {
+    margin: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

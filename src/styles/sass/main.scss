@@ -321,4 +321,17 @@ p.self-description {
   .left-panel {
     width: 100%;
   }
+
+  .right-panel {
+    margin: 0 1em;
+  }
+
+  .ability-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+
+  p {
+    margin: 10px;
+  }
+}
 }
