@@ -2,9 +2,10 @@
 
 // reset some browser default styles
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
 }
 
 // colors
@@ -23,17 +24,20 @@ $timeline-body-round: 3px;
 $timeline-body-shadow: 1px 3px 9px rgba(0,0,0, .1);
 
 body {
-    font-family: 'K2D', sans-serif;
-    background: $body-bg;
-    letter-spacing: 1px;
+  font-family: 'K2D', sans-serif;
+  background: $body-bg;
+  letter-spacing: 1px;
+}
+
+// typography
+p {
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 14px;
+  opacity: .8;
 }
 
 // page container
-.timelime-section-container {
-    max-width: 650px;
-    margin: 50px auto;
-}
-
 .main-content-container {
   display: flex;
 }
@@ -49,7 +53,15 @@ body {
 }
 
 .right-panel {
-  margin: 0 auto ;
+  margin: 0 auto;
+}
+
+.cv-section {
+
+  &:first-child {
+    animation: fade-in 0.6s ease-in;
+    opacity: 1;
+  }
 }
 
 .selfie-image-container {
@@ -62,176 +74,169 @@ body {
   top: 30%;
 }
 
-// typography
-p {
-    font-weight: 300;
-    line-height: 1.5;
-    font-size: 14px;
-    opacity: .8;
+.timelime-section-container {
+  max-width: 650px;
+  margin: 50px auto;
 }
 
 // timeline style
 .timeline {
+  position: relative;
+  padding-left: 4rem;
+  margin: 0 0 0 30px;
+  color: white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: $timeline-body-bg;
+  }
+
+  .timeline-container {
     position: relative;
-    padding-left: 4rem;
-    margin: 0 0 0 30px;
-    color: white;
+    margin-bottom: 2.5rem;;
 
-    &:before {
-        content: '';
+    .timeline-icon {
+      position: absolute;
+      left: -88px;
+      top: 4px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 2rem;
+      background: $secondary;
+
+      i {
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 4px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      img {
+        width: 100%;
         height: 100%;
-        background: $timeline-body-bg;
+        border-radius: 50%;
+      }
     }
 
-    .timeline-container {
-        position: relative;
-        margin-bottom: 2.5rem;;
+    .timeline-body {
+      background: $timeline-body-bg;
+      border-radius: $timeline-body-round;
+      padding: 20px 20px 15px;
+      box-shadow: $timeline-body-shadow;
 
-        .timeline-icon {
-            position: absolute;
-            left: -88px;
-            top: 4px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 2rem;
-            background: $secondary;
+      &:before {
+        content: '';
+        background: inherit;
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        left: -10px;
+        transform: rotate(45deg);
+        border-radius: 0 0 0 2px;
+      }
 
-            i {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-            }
+      .timeline-title {
+        margin-bottom: 1.4rem;
 
-            img {
-                width: 100%;
-                height: 100%;
-                border-radius: 50%;
-            }
+        .badge {
+          background: $secondary;
+          padding: 4px 8px;
+          border-radius: 3px;
+          font-size: 12px;
+          font-weight: bold;
         }
+      }
 
-        .timeline-body {
-            background: $timeline-body-bg;
-            border-radius: $timeline-body-round;
-            padding: 20px 20px 15px;
-            box-shadow: $timeline-body-shadow;
-
-            &:before {
-                content: '';
-                background: inherit;
-                width: 20px;
-                height: 20px;
-                display: block;
-                position: absolute;
-                left: -10px;
-                transform: rotate(45deg);
-                border-radius: 0 0 0 2px;
-            }
-
-            .timeline-title {
-                margin-bottom: 1.4rem;
-
-                .badge {
-                    background: $secondary;
-                    padding: 4px 8px;
-                    border-radius: 3px;
-                    font-size: 12px;
-                    font-weight: bold;
-                }
-            }
-
-            .timeline-subtitle {
-                font-weight: 300;
-                font-style: italic;
-                opacity: .4;
-                margin-top: 16px;
-                font-size: 11px;
-            }
-        }
-
-        // Primary Timeline
-        &.primary {
-            .badge,
-            .timeline-icon {
-                background: $primary !important;
-            }
-        }
-
-        // Info Timeline
-        &.info {
-            .badge,
-            .timeline-icon {
-                background: $info !important;
-            }
-        }
-
-        // Success Timeline
-        &.success {
-            .badge,
-            .timeline-icon {
-                background: $success !important;
-            }
-        }
-
-        // Warning Timeline
-        &.warning {
-            .badge,
-            .timeline-icon {
-                background: $warning !important;
-            }
-        }
-
-        // Dnager Timeline
-        &.danger {
-            .badge,
-            .timeline-icon {
-                background: $danger !important;
-            }
-        }
-
+      .timeline-subtitle {
+        font-weight: 300;
+        font-style: italic;
+        opacity: .4;
+        margin-top: 16px;
+        font-size: 11px;
+      }
     }
+
+    // Primary Timeline
+    &.primary {
+      .badge,
+      .timeline-icon {
+        background: $primary !important;
+      }
+    }
+
+    // Info Timeline
+    &.info {
+      .badge,
+      .timeline-icon {
+        background: $info !important;
+      }
+    }
+
+    // Success Timeline
+    &.success {
+      .badge,
+      .timeline-icon {
+        background: $success !important;
+      }
+    }
+
+    // Warning Timeline
+    &.warning {
+      .badge,
+      .timeline-icon {
+        background: $warning !important;
+      }
+    }
+
+    // Dnager Timeline
+    &.danger {
+      .badge,
+      .timeline-icon {
+        background: $danger !important;
+      }
+    }
+
+  }
 }
 
+// animations
+.reveal {
+  position: relative;
+  opacity: 0;
+}
 
-.author{
-	font-family: inherit;
-	padding: 3em;
-	text-align: center;
-	width: 100%;
-		color: white;
+.reveal.active {
+  opacity: 1;
+}
 
-	a:link,
-	a:visited{
-		color: white;
-		&:hover{
-			text-decoration: none;
-		}
-	}
-	.btn:link,
-	.btn:visited{
-		margin-top: 1em;
-		text-decoration: none;
-		display: inline-block;
-		font-family: inherit;
-		font-weight: 100;
-		color: white;
-		text-align: center;
-		vertical-align: middle;
-		user-select: none;
-		background-color: black;
-		padding: 1.5em 2rem;
-		border-radius: 1em;
-		transition: .5s all;
-		&:hover,
-		&:focus,
-		&:active{
-			background-color: lighten(black, 10%);
-		}
-	}
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
