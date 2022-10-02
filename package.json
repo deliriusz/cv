@@ -1,0 +1,14 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "personal CV",
+  "main": "index.js",
+  "author": "deliriusz <deliriusz.eth@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass styles/sass/main.scss styles/css/style.css -w"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}
