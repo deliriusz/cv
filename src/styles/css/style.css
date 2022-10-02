@@ -36,6 +36,13 @@ p {
   margin: 0 auto;
 }
 
+.cv-section {
+  max-width: 950px;
+  margin-top: 1em;
+}
+.cv-section h1 {
+  margin-bottom: 20px;
+}
 .cv-section:first-child {
   animation: fade-in 0.6s ease-in;
   opacity: 1;
@@ -48,11 +55,41 @@ p {
 .selfie-image {
   border-radius: 50%;
   position: absolute;
-  top: 30%;
+  top: 50%;
+}
+
+.fa-brands {
+  font-size: 25px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.fa-brands:hover {
+  background-color: #58a5fa;
+}
+
+.ability-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+.ability-container p {
+  margin: 10px;
+}
+
+.ability-badge {
+  background: #1d8cf8;
+}
+
+.badge, .ability-badge {
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .timelime-section-container {
-  max-width: 650px;
+  max-width: 850px;
   margin: 50px auto;
 }
 
@@ -117,37 +154,31 @@ p {
 .timeline .timeline-container .timeline-body .timeline-title {
   margin-bottom: 1.4rem;
 }
-.timeline .timeline-container .timeline-body .timeline-title .badge {
-  background: #4f537b;
-  padding: 4px 8px;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: bold;
-}
 .timeline .timeline-container .timeline-body .timeline-subtitle {
   font-weight: 300;
   font-style: italic;
   opacity: 0.4;
   margin-top: 16px;
+  margin-bottom: 10px;
   font-size: 11px;
 }
-.timeline .timeline-container.primary .badge,
+.timeline .timeline-container.primary .badge, .timeline .timeline-container.primary .ability-badge,
 .timeline .timeline-container.primary .timeline-icon {
   background: #1d8cf8 !important;
 }
-.timeline .timeline-container.info .badge,
+.timeline .timeline-container.info .badge, .timeline .timeline-container.info .ability-badge,
 .timeline .timeline-container.info .timeline-icon {
   background: #11cdef !important;
 }
-.timeline .timeline-container.success .badge,
+.timeline .timeline-container.success .badge, .timeline .timeline-container.success .ability-badge,
 .timeline .timeline-container.success .timeline-icon {
   background: #00bf9a !important;
 }
-.timeline .timeline-container.warning .badge,
+.timeline .timeline-container.warning .badge, .timeline .timeline-container.warning .ability-badge,
 .timeline .timeline-container.warning .timeline-icon {
   background: #ff8d72 !important;
 }
-.timeline .timeline-container.danger .badge,
+.timeline .timeline-container.danger .badge, .timeline .timeline-container.danger .ability-badge,
 .timeline .timeline-container.danger .timeline-icon {
   background: #fd5d93 !important;
 }
@@ -162,7 +193,7 @@ p {
 }
 
 .active.fade-bottom {
-  animation: fade-bottom 1s ease-in;
+  animation: fade-bottom 0.6s ease-in;
 }
 
 @keyframes fade-in {
