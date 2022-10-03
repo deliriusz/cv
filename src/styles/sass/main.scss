@@ -16,6 +16,7 @@ $info: #11cdef;
 $success: #00bf9a;
 $warning: #ff8d72;
 $danger: #fd5d93;
+$is_for_pdf: true;
 
 // timeline variables
 $body-bg: #1e1e2f;
@@ -284,7 +285,11 @@ p.self-description {
 // animations
 .reveal {
   position: relative;
-  opacity: 0;
+  @if $is_for_pdf {
+    opacity: 1;
+  } @else {
+    opacity: 0;
+  }
 }
 
 .reveal.active {
@@ -330,7 +335,7 @@ p.self-description {
   }
 }
 
-@media only screen and (max-width: 1050px) {
+@mixin static-page {
   .main-content-container {
     flex-direction: column;
   }
@@ -354,6 +359,14 @@ p.self-description {
   .section-break {
     width: 70%;
   }
+}
+
+@if $is_for_pdf {
+  @include static-page
+}
+
+@media only screen and (max-width: 1050px) {
+  @include static-page
 }
 
 @media only screen and (max-width: 600px) {

@@ -227,7 +227,7 @@ p.self-description {
 
 .reveal {
   position: relative;
-  opacity: 0;
+  opacity: 1;
 }
 
 .reveal.active {
@@ -270,6 +270,30 @@ p.self-description {
     opacity: 1;
   }
 }
+.main-content-container {
+  flex-direction: column;
+}
+
+.active.fade-bottom {
+  animation: initial;
+}
+
+.active.fade-right {
+  animation: initial;
+}
+
+.left-panel {
+  width: 100%;
+}
+
+.right-panel {
+  margin: 0 auto;
+}
+
+.section-break {
+  width: 70%;
+}
+
 @media only screen and (max-width: 1050px) {
   .main-content-container {
     flex-direction: column;
